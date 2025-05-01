@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  font-family: "poppins";
+}
+body {
+  background-color: #160430;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+.container .image {
+  flex: 1;
+  width: 50%;
+  height: 100%;
+}
+.container .image img {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.container .form {
+  width: 50%;
+}
+.container .form form {
+  flex: 1;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+  padding: 20px 40px;
+}
+.container form h1 {
+    width: 100%;
+    text-align: center;
+  color: white;
+  font-size: 77px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.container form label {
+  color: white;
+  width: 100%;
+  font-size: 15px;
+  font-weight: bold;
+
+  text-transform: lowercase;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.suces{
+  color: green !important;
+}
+.container form input {
+  color: white;
+  background-color: #261046;
+  padding: 10px 10px;
+  width: calc(100%-10px);
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+.container form button {
+  padding: 10px;
+  width: 100%;
+  margin-top: 10px;
+  background: linear-gradient(90deg, #501794 0%, #3e70a1 100%);
+  border-radius: 10px;
+}
+.container form p {
+    color: red;
+  font-size: 15px;
+  text-transform: capitalize;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  text-align: center;
+  margin: 10px;
+}
+form p a {
+  color: white;
+}
+.info{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 20px 30px ;
+}
+.info h1{
+    font-size: 50px;
+    color: white;
+}
+.info span{
+    display: block;
+    color: white;
+    font-size: 45px;
+    font-weight: 600;
+    color: #3e70a1;
+}
+@media (max-width: 992px) {
+  body {
+    background-color: transparent;
+  }
+  .container .image {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+  }
+  .container .image::before{
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(  transparent , #160430 60%) ;
+
+  }
+  .container .image img {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .container .form {
+    width: auto;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+  }
+  .container form h1 {
+    font-size: 50px;
+    
+  }
+  .info{
+    position: absolute;
+    left: 50%;
+    top: 5%;
+    padding: 10px 20px ;
+    transform: translateX(-50%);
+    text-align: center;
+}
+.info h1{
+    font-size: 30px;
+  
+}
+.info span{
+    
+    font-size: 25px;
+    
+    color: #501794;
+}
+  
+}
+@media(max-width:672px){
+    .container form h1 {
+    font-size: 30px;
+    
+  }
+  .info h1{
+    font-size: 20px;
+  
+}
+.info span{
+    
+    font-size: 15px;
+    
+    color: #501794;
+}
+
+}
