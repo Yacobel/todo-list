@@ -9,7 +9,7 @@ if (!isset($_SESSION['name'])) {
         $name=$_POST['name'];
         $start=$_POST['start'];
         $end=$_POST['end'];
-        $rool="1";
+        $rool="In Doing";
         $id=$_SESSION['id'];
         if (!empty($name)&&!empty($start)&&!empty($end)) {
             $sql=$conn->prepare("INSERT INTO tasks(name,start,end,role,user_id) VALUES(?,?,?,?,?)");
@@ -48,20 +48,23 @@ if (!isset($_SESSION['name'])) {
       <div class="container">
         <div class="saidbare">
           <ul>
-            <li class="todo">
-              <h1>todo list</h1>
+            
+              <h1 class="todo"><a href="index.php">todo list</a></h1>
               
-            </li>
+            
             <li>
               <i><i class="fa-solid fa-list-check"></i></i
               ><a href="all.php">all taskes</a>
             </li>
             <li>
               <i><i class="fa-solid fa-bars-progress"></i></i
-              ><a href="">in doing taskes</a>
+              ><a href="indoing.php">in doing taskes</a>
             </li>
             <li>
-              <i class="fa-solid fa-check"></i><a href="">complet taskes</a>
+              <i class="fa-solid fa-check"></i><a href="complet.php">complet taskes</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-pause"></i><a href="suspand.php">suspand taskes</a>
             </li>
           </ul>
         </div>
@@ -106,5 +109,6 @@ if (!isset($_SESSION['name'])) {
         </div>
       </div>
     </div>
+    
   </body>
 </html>

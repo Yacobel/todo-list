@@ -1,3 +1,12 @@
+<?php
+
+
+
+
+?>
+
+
+
 
 
 
@@ -9,9 +18,9 @@ if (!isset($_SESSION['name'])) {
     exit(); 
 }else{
     try {
-        $id=$_SESSION['id'];
-        $sql=$conn->prepare("SELECT * FROM tasks WHERE user_id=?");
-        $sql->execute([$id]);
+        $role="done";
+        $sql=$conn->prepare("SELECT * FROM tasks WHERE role=?");
+        $sql->execute([$role]);
         $res=$sql->fetchAll(PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
         echo "faild in fetsh ".$e->getMessage();
@@ -32,7 +41,7 @@ if (!isset($_SESSION['name'])) {
       if(!empty($name)&&!empty($start)&&!empty($end)&&!empty($roole)){
         $sql=$conn->prepare("UPDATE  tasks SET  start=? , end=? , name=? , role=? WHERE task_id=?");
         $sql->execute([$start,$end,$name,$roole,$id]);
-        header('Location: all.php');
+        header('Location: complet.php');
         exit();
 
       }else{
@@ -71,7 +80,7 @@ if (!isset($_SESSION['name'])) {
             
             <li>
               <i><i class="fa-solid fa-list-check"></i></i
-              ><a href="">all taskes</a>
+              ><a href="all.php">all taskes</a>
             </li>
             <li>
               <i><i class="fa-solid fa-bars-progress"></i></i
@@ -103,8 +112,6 @@ if (!isset($_SESSION['name'])) {
           </ul>
         </div>
         <div class="table">
-         <?php 
-          ?>
           <?php 
             if (isset($allmsg)) {
               echo $allmsg;
@@ -113,10 +120,9 @@ if (!isset($_SESSION['name'])) {
           <div class="info-task">
             <?php
             if ($res) {
-              echo "<h1>your taskes</h1>";
+                 echo "<h1>your taskes</h1>";
               foreach($res as $el){
               echo '
-              
               <div class="form">
                     <form action="" method="post">
                     <div class="form-info">
@@ -149,14 +155,11 @@ if (!isset($_SESSION['name'])) {
                     </form>
               </div>
               ';
-
-            }   
-            }else{
-              echo "<h1>you dont have tasks</h1>";
             }
-            
-            
-            
+              
+            }else{
+                echo "<h1>you dont have tasks</h1>";
+            }
             ?>
             
           </div>
@@ -167,5 +170,6 @@ if (!isset($_SESSION['name'])) {
     <div class="add-task">
       <a href="index.php"><i class="fa-solid fa-plus"></i></a>
     </div>
+
   </body>
 </html>

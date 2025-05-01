@@ -39,8 +39,15 @@ body {
   flex-direction: column;
   width: 100%;
 }
+
 .todo {
   text-align: center !important;
+  padding: 20px !important;
+}
+.todo a {
+  font-size: 30px !important;
+  color: white !important;
+  text-transform: capitalize !important;
 }
 .container ul li {
   padding: 8px 10px;
@@ -75,12 +82,11 @@ i {
   font-weight: 600;
   transition: 0.3s ease;
 }
-.container ul li h1 {
-  font-size: 25px;
+.container .saidbare ul h1 {
+  font-size: 25px !important;
   font-weight: bold;
   margin-left: auto;
   margin-right: auto;
-
   padding: 10px 20px;
   text-transform: capitalize;
   color: white;
@@ -212,4 +218,23 @@ i {
   font-size: 18px;
   text-transform: capitalize;
   font-weight: 600;
+}
+.add-task {
+  position: fixed;
+  bottom: 27px;
+  right: 14px;
+}
+
+.add-task i {
+  width: 30px;
+  height: 30px;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: #4f17949b;
+  color: wheat;
+  font-size: 31px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
