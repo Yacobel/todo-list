@@ -67,6 +67,8 @@ if (!isset($_SESSION['name'])) {
               <i class="fa-solid fa-pause"></i><a href="suspand.php">suspand taskes</a>
             </li>
           </ul>
+                    <ul><li class="logout"><a href="logout.php"><i><i class="fa-solid fa-right-from-bracket"></i></i></a></li></ul>
+
         </div>
       </div>
       <div class="taskes-container">

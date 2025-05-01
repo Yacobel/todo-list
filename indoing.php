@@ -18,10 +18,12 @@ if (!isset($_SESSION['name'])) {
     exit(); 
 }else{
     try {
-        $role="in doing";
-        $sql=$conn->prepare("SELECT * FROM tasks WHERE role=?");
-        $sql->execute([$role]);
+        $role="In Doing";
+        $id=$_SESSION['id'];
+        $sql=$conn->prepare("SELECT * FROM tasks WHERE role = ? AND user_id=? ");
+        $sql->execute([$role,$id]);
         $res=$sql->fetchAll(PDO::FETCH_ASSOC);
+         
     } catch (PDOException $e) {
         echo "faild in fetsh ".$e->getMessage();
     }
@@ -93,6 +95,8 @@ if (!isset($_SESSION['name'])) {
               <i class="fa-solid fa-pause"></i><a href="suspand.php">suspand taskes</a>
             </li>
           </ul>
+                    <ul><li class="logout"><a href="logout.php"><i><i class="fa-solid fa-right-from-bracket"></i></i></a></li></ul>
+
         </div>
       </div>
       <div class="taskes-container">
@@ -121,6 +125,7 @@ if (!isset($_SESSION['name'])) {
             <?php
             if ($res) {
                  echo "<h1>your taskes</h1>";
+                 
               foreach($res as $el){
               echo '
               <div class="form">
@@ -170,5 +175,6 @@ if (!isset($_SESSION['name'])) {
     <div class="add-task">
       <a href="index.php"><i class="fa-solid fa-plus"></i></a>
     </div>
+    
   </body>
 </html>
