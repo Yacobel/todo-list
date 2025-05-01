@@ -1,3 +1,32 @@
+
+
+
+<?php
+include('conection.php');
+
+if (!isset($_SESSION['name'])) {
+    header('Location: Signin.php');
+    exit(); 
+}else{
+    try {
+        $id=$_SESSION['id'];
+        $sql=$conn->prepare("SELECT * FROM tasks WHERE user_id=?");
+        $sql->execute([$id]);
+        $res=$sql->fetchAll(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        echo "faild in fetsh ".$e->getMessage();
+    }
+            
+           
+        
+        
+    
+    
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -49,10 +78,8 @@
         </div>
         <div class="table">
           <h1>your taskes</h1>
-          <table border="1">
-            <tr><th>name</th> <th>time start</th> <th>time end</th> <th>statu</th></tr>
-
-          </table>
+          <div class="info-task"></div>
+          
         </div>
       </div>
     </div>
