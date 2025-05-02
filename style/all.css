@@ -16,11 +16,10 @@ body {
 }
 .main-container {
   display: flex;
-  gap: 20px;
+  gap: 10px;
 }
 .container {
   padding: 10px 20px;
-  min-height: 100vh;
   min-width: 250px;
   max-width: 250px;
   padding: 0px 20px;
@@ -46,19 +45,19 @@ body {
   height: 100vh;
 }
 .logout {
-  display: flex !important;
+  display: flex;
   justify-content: end !important;
-  align-items: center !important;
-  padding: 10px !important;
+  align-items: center;
+  padding: 10px;
 }
 .todo {
-  text-align: center !important;
-  padding: 20px !important;
+  text-align: center;
+  padding: 20px;
 }
 .todo a {
-  font-size: 30px !important;
-  color: white !important;
-  text-transform: capitalize !important;
+  font-size: 30px;
+  color: white;
+  text-transform: capitalize;
 }
 .container ul li {
   padding: 8px 10px;
@@ -71,7 +70,12 @@ body {
   transition: 0.3s ease;
 }
 .container ul li:hover .text-ul {
+  color: #3e70a1;
   padding-left: 20px;
+}
+.container ul li:hover i {
+  color: #3e70a1;
+  
 }
 .profile {
   display: flex;
@@ -92,29 +96,6 @@ i {
   text-transform: capitalize;
   font-weight: 600;
   transition: 0.3s ease;
-}
-.container ul li h1 {
-  font-size: 25px;
-  font-weight: bold;
-  margin-left: auto;
-  margin-right: auto;
-
-  padding: 10px 20px;
-  text-transform: capitalize;
-  color: white;
-}
-.container ul li p {
-  font-size: 18px;
-  font-weight: 600;
-  color: black;
-  text-transform: capitalize;
-  color: white;
-}
-.container li img {
-  width: 40px;
-  height: 40px;
-  object-fit: cover;
-  border-radius: 100%;
 }
 .taskes-container {
   width: 100%;
@@ -162,12 +143,6 @@ i {
   color: white;
 }
 
-.taskes-container {
-  width: 100%;
-  display: flex;
-  justify-content: start;
-  align-items: center;
-}
 .table {
   width: calc(90% - 80px);
   background-color: #00000046;
@@ -190,14 +165,7 @@ i {
   padding: 20px;
   margin-bottom: 20px;
 }
-.table table {
-  width: 100%;
-}
 
-.alltsaks {
-  background-color: white !important;
-  border-radius: 0px !important;
-}
 .info-task {
   width: 100% !important;
 }
@@ -215,25 +183,16 @@ i {
   align-items: center;
   padding: 20px 40px;
 }
-form h1 {
-  width: 100%;
-  text-align: center;
-  color: white;
-  font-size: 77px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
+
 form label {
   color: white;
   width: 100%;
   font-size: 15px;
   font-weight: bold;
-
   text-transform: lowercase;
   display: flex;
   justify-content: start;
   align-items: center;
-
   gap: 10px;
 }
 .suces {
@@ -285,19 +244,6 @@ form p {
   text-align: center;
   margin: 10px;
 }
-form p a {
-  color: white;
-}
-.info {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  padding: 20px 30px;
-}
-.info h1 {
-  font-size: 50px;
-  color: white;
-}
 
 .allmsg {
   color: red;
@@ -335,6 +281,11 @@ form p a {
   i {
     font-size: 15px;
   }
+  .container ul li:hover .text-ul,
+  .container ul li:hover i {
+    padding-left: 0px;
+    color: #3e70a1;
+  }
   .form form {
     flex-direction: column;
   }
@@ -348,7 +299,7 @@ form p a {
 }
 @media (max-width: 711px) {
   .container .text-ul {
-    display: none !important;
+    display: none;
   }
   .container {
     min-width: 50px;
@@ -368,12 +319,14 @@ form p a {
     padding: 20px 5px !important;
     font-size: 20px !important;
   }
-
   .todo a {
     font-size: 20px !important;
   }
   .container ul li {
     width: auto;
+  }
+  .container ul li:hover i {
+    color: #3e70a1;
   }
   .form form {
     padding: 20px;
