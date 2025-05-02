@@ -124,7 +124,7 @@ For support or to reach the project maintainers:
 
 Email: yacobelhaouarii@gmail.com
 
-GitHub: github.com/yourusername
+GitHub: github.com/Yacobel
 
 yaml
 Copy
