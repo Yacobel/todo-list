@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style/all.css" />
+    <title>todo list dashbord</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="container">
+        <div class="saidbare">
+          <ul>
+            <h1 class="todo"><a href="index.php">todo list</a></h1>
+
+            <li>
+              <a href="./all.php"><i class="fa-solid fa-list-check"></i></a>
+
+              <a class="text-ul" href="">all taskes</a>
+            </li>
+            <li>
+              <a href="./indoing.php"><i class="fa-solid fa-bars-progress"></i></a>
+              <a class="text-ul" href="indoing.php">in doing taskes</a>
+            </li>
+            <li>
+              <a href="./complet.php"><i class="fa-solid fa-check"></i></a>
+              <a class="text-ul" href="complet.php">complet taskes</a>
+            </li>
+            <li>
+              <a href="./suspand.php"><i class="fa-solid fa-pause"></i></a>
+              <a class="text-ul" href="suspand.php">suspand taskes</a>
+            </li>
+          </ul>
+          <ul>
+            <li class="logout">
+              <a href="logout.php"
+                ><i><i class="fa-solid fa-right-from-bracket"></i></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="taskes-container">
+        <div class="header">
+          <ul>
+            <li><h1></h1></li>
+            <li class="profile">
+              <a href="">
+                <img src="./images/Background Image.png" alt="" />
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="table">
+          <div class="info-task">
+            <div class="form">
+              <form action="" method="post">
+                <div class="form-info">
+                  <label for="">
+                    <input
+                      type="text"
+                      hidden
+                      name="id"
+                      value="'.$el['task_id'].'"
+                    />
+
+                    <h3>task</h3>
+                    <input type="text" name="name" value="'.$el['name'].'" />
+                  </label>
+                  <label for="">
+                    <h3>date-start</h3>
+                    <input
+                      type="datetime-local"
+                      name="start"
+                      value="'.$el['start'].'"
+                    />
+                  </label>
+                  <label for="">
+                    <h3>date-end</h3>
+                    <input
+                      type="datetime-local"
+                      name="end"
+                      value="'.$el['end'].'"
+                    />
+                  </label>
+                  <label for="">
+                    <h3>status</h3>
+                    <select name="rool" id="">
+                      <option value="done">'.$el['role'].'</option>
+                      <option value="done">done</option>
+                      <option value="in doing">in doing</option>
+                      <option value="suspanded">suspanded</option>
+                    </select>
+                  </label>
+                </div>
+                <div class="btns">
+                  <button type="submit" name="drop">drop</button>
+                  <button type="submit" name="update">update</button>
+                </div>
+              </form>
+            </div>
+            ';
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="add-task">
+      <a href="index.php"><i class="fa-solid fa-plus"></i></a>
+    </div>
+  </body>
+</html>

@@ -59,7 +59,7 @@ body {
   gap: 20px;
   transition: 0.3s ease;
 }
-.container ul li:hover a {
+.container ul li:hover .text-ul {
   padding-left: 20px;
 }
 .profile {
@@ -166,10 +166,13 @@ i {
 }
 
 .form {
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #1604307c;
+  padding: 20px;
+  border-radius: 40px;
+  width: calc(90% - 40px);
 }
 .form form {
   width: calc(90% - 80px);
@@ -199,14 +202,14 @@ i {
   width: 100%;
   color: white;
   text-transform: capitalize;
-  font-size: 18px;
+  font-size: 1.17em;
   font-weight: 600;
 }
 .form form input {
   padding: 8px 10px;
   border-radius: 10px;
   font-size: 18px;
-  background: linear-gradient(90deg, #501794 0%, #3e70a1 100%);
+  background: #00000045;
   color: white;
 }
 .form form input::placeholder {
@@ -252,4 +255,116 @@ i {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media (max-width: 992px) {
+  .container {
+    min-width: 160px;
+    max-width: 160px;
+  }
+  .container ul li a,
+  i {
+    font-size: 15px;
+  }
+  .form form {
+    flex-direction: column;
+  }
+  form .btns {
+    width: 100%;
+    flex-direction: row !important;
+  }
+  .todo {
+    padding: 20px 10px !important;
+  }
+}
+@media (max-width: 711px) {
+  .container ul li .text-ul {
+    display: none !important;
+  }
+  .container {
+    min-width: 50px;
+    padding: 10px;
+  }
+  .header ul li h1 {
+    font-size: 18px;
+  }
+  .profile a {
+    font-size: 15px;
+  }
+  .header ul li a img {
+    width: 30px;
+    height: 30px;
+  }
+  .container .saidbare ul h1 {
+    padding: 20px 5px !important;
+    font-size: 20px !important;
+  }
+  .todo a {
+    font-size: 20px !important;
+  }
+  .container ul li {
+    width: auto;
+  }
+  .form form {
+    padding: 20px;
+    width: calc(100% - 40px);
+    gap: 20px;
+  }
+  form label {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+  }
+  form .form-info {
+    width: 100%;
+  }
+  form h3 {
+    width: 100%;
+    text-align: center;
+  }
+  form input,
+  select {
+    width: calc(100% - 20px);
+  }
+
+  form select {
+    width: 100%;
+  }
+  form button {
+    padding: 5px;
+  }
+  .add-task {
+    display: none;
+  }
+  body {
+    background-repeat: unset;
+    background-position: unset;
+    background-size: unset;
+  }
+  .main-container {
+    gap: 6px;
+  }
+  .table {
+    padding: 20px;
+    width: calc(90% - 40px);
+  }
+  .table .info-task h1 {
+    padding: 5px;
+    font-size: 25px;
+  }
+  .form form h1 {
+    font-size: 20px;
+    padding: 10px;
+  }
+  .form form label {
+    align-items: center;
+    font-size: 18px;
+  }
+  .form form input {
+    font-size: 15px;
+  }
+  .form form button {
+    font-size: 15px;
+  }
 }

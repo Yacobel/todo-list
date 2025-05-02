@@ -48,23 +48,24 @@ if (!isset($_SESSION['name'])) {
       <div class="container">
         <div class="saidbare">
           <ul>
-            
-              <h1 class="todo"><a href="index.php">todo list</a></h1>
-              
-            
+            <h1 class="todo"><a href="index.php">todo list</a></h1>
+
             <li>
-              <i><i class="fa-solid fa-list-check"></i></i
-              ><a href="all.php">all taskes</a>
+              <a href="./all.php"><i class="fa-solid fa-list-check"></i></a>
+
+              <a class="text-ul" href="./all.php">all taskes</a>
             </li>
             <li>
-              <i><i class="fa-solid fa-bars-progress"></i></i
-              ><a href="indoing.php">in doing taskes</a>
+              <a href="./indoing.php"><i class="fa-solid fa-bars-progress"></i></a>
+              <a class="text-ul" href="indoing.php">in doing taskes</a>
             </li>
             <li>
-              <i class="fa-solid fa-check"></i><a href="complet.php">complet taskes</a>
+              <a href="./complet.php"><i class="fa-solid fa-check"></i></a>
+              <a class="text-ul" href="complet.php">complet taskes</a>
             </li>
             <li>
-              <i class="fa-solid fa-pause"></i><a href="suspand.php">suspand taskes</a>
+              <a href="./suspand.php"><i class="fa-solid fa-pause"></i></a>
+              <a class="text-ul" href="suspand.php">suspand taskes</a>
             </li>
           </ul>
                     <ul><li class="logout"><a href="logout.php"><i><i class="fa-solid fa-right-from-bracket"></i></i></a></li></ul>
