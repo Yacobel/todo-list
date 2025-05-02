@@ -93,14 +93,7 @@ if (!isset($_SESSION['name'])) {
                             echo htmlspecialchars($_SESSION['name'], ENT_QUOTES, 'UTF-8');
                           } ?>!</h1>
           </li>
-          <li class="profile">
-            <a href="">
-              <img src="./images/Background Image.png" alt="" />
-              <a href=""><?php if (isset($_SESSION)) {
-                            echo $_SESSION['name'];
-                          } ?></a>
-            </a>
-          </li>
+
         </ul>
       </div>
       <div class="table">

@@ -91,17 +91,9 @@ if (!isset($_SESSION['name'])) {
       <div class="header">
         <ul>
           <li>
-            <h1>welcome <?php if (isset($_SESSION)) {
+            <h1>Welcome <?php if (isset($_SESSION['name'])) {
                           echo $_SESSION['name'];
                         } ?></h1>
-          </li>
-          <li class="profile">
-            <a href="">
-              <img src="./images/Background Image.png" alt="" />
-              <a href=""><?php if (isset($_SESSION)) {
-                            echo $_SESSION['name'];
-                          } ?></a>
-            </a>
           </li>
         </ul>
       </div>

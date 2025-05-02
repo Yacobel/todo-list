@@ -22,7 +22,6 @@ body {
   padding: 10px 20px;
   min-width: 250px;
   max-width: 250px;
-  padding: 0px 20px;
   background-color: #1604307c;
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
@@ -77,17 +76,7 @@ body {
   color: #3e70a1;
   
 }
-.profile {
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-  justify-content: center;
-  align-items: center;
-}
-.profile a {
-  text-transform: capitalize;
-  font-size: 20px;
-}
+
 
 .container ul li a,
 i {
@@ -124,16 +113,13 @@ i {
   border-radius: 30px;
   margin-top: 10px;
 }
-.header ul li a img {
-  height: 40px;
-  width: 40px;
-  border-radius: 100%;
-}
+
 .header ul li h1 {
   color: white;
   font-size: 25px;
   font-weight: 700;
   text-transform: capitalize;
+  padding: 10px;
 }
 .header ul li a {
   display: flex;
@@ -307,13 +293,7 @@ form p {
   }
   .header ul li h1 {
     font-size: 18px;
-  }
-  .profile a {
-    font-size: 15px;
-  }
-  .header ul li a img {
-    width: 30px;
-    height: 30px;
+    padding: 10px;
   }
   .todo {
     padding: 20px 5px !important;
@@ -367,8 +347,8 @@ form p {
     gap: 6px;
   }
   .table {
-    padding: 20px;
-    width: calc(90% - 40px);
+    padding: 10px;
+    width: calc(90% - 10px);
   }
   .table .info-task h1 {
     padding: 5px;
