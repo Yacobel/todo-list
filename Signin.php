@@ -32,7 +32,7 @@ if (isset($_POST['Singin'])) {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="../style/Singin.css" />
+  <link rel="stylesheet" href="./style/Singin.css" />
   <title>todo list - Signin</title>
 </head>
 
@@ -40,7 +40,7 @@ if (isset($_POST['Singin'])) {
 
   <div class="container">
     <div class="image">
-      <img src="../images/Background Image.png" alt="" />
+      <img src="./images/Background Image.png" alt="" />
     </div>
     <div class="form">
       <form action="" method="post">

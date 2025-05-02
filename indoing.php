@@ -1,13 +1,14 @@
 <?php
 include('conection.php');
+
 if (!isset($_SESSION['name'])) {
   header('Location: Signin.php');
   exit();
 } else {
   try {
-    $role = "suspanded";
+    $role = "In Doing";
     $id = $_SESSION['id'];
-    $sql = $conn->prepare("SELECT * FROM tasks WHERE role=? AND user_id=?");
+    $sql = $conn->prepare("SELECT * FROM tasks WHERE role = ? AND user_id=? ");
     $sql->execute([$role, $id]);
     $res = $sql->fetchAll(PDO::FETCH_ASSOC);
   } catch (PDOException $e) {
@@ -17,7 +18,7 @@ if (!isset($_SESSION['name'])) {
     $id = $_POST['id'];
     $sql = $conn->prepare("DELETE FROM tasks WHERE TASK_id=?");
     $sql->execute([$id]);
-    header('Location: suspand.php');
+    header('Location: all.php');
     exit();
   }
   if (isset($_POST['update'])) {
@@ -29,17 +30,14 @@ if (!isset($_SESSION['name'])) {
     if (!empty($name) && !empty($start) && !empty($end) && !empty($roole)) {
       $sql = $conn->prepare("UPDATE  tasks SET  start=? , end=? , name=? , role=? WHERE task_id=?");
       $sql->execute([$start, $end, $name, $roole, $id]);
-      header('Location: suspand.php');
+      header('Location: indoing.php');
       exit();
     } else {
-      $allmsg = "<p class='allmsg'>allmsg'>All fields must be valid</p>";
+      $allmsg = "<p class='allmsg'>All fields must be filled</p>";
     }
   }
 }
-
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,7 +50,7 @@ if (!isset($_SESSION['name'])) {
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous"
     referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="../style/all.css">
+  <link rel="stylesheet" href="./style/all.css">
   <title>To-Do List Dashboard</title>
 </head>
 
@@ -74,7 +72,7 @@ if (!isset($_SESSION['name'])) {
           </li>
           <li>
             <a href="./complet.php"><i class="fa-solid fa-check"></i></a>
-            <a class="text-ul" href="complet.php">Completed Task</a>
+            <a class="text-ul" href="complet.php">Completed Tasks</a>
           </li>
           <li>
             <a href="./suspand.php"><i class="fa-solid fa-pause"></i></a>
@@ -91,13 +89,13 @@ if (!isset($_SESSION['name'])) {
       <div class="header">
         <ul>
           <li>
-            <h1>welcome <?php if (isset($_SESSION)) {
+            <h1>Welcome <?php if (isset($_SESSION)) {
                           echo $_SESSION['name'];
                         } ?></h1>
           </li>
           <li class="profile">
             <a href="">
-              <img src="../images/Background Image.png" alt="" />
+              <img src="./images/Background Image.png" alt="" />
               <a href=""><?php if (isset($_SESSION)) {
                             echo $_SESSION['name'];
                           } ?></a>
@@ -114,7 +112,8 @@ if (!isset($_SESSION['name'])) {
         <div class="info-task">
           <?php
           if ($res) {
-            echo "<h1>your taskes</h1>";
+            echo "<h1>Your Tasks</h1>";
+
             foreach ($res as $el) {
               echo '
               <div class="form">
@@ -127,23 +126,23 @@ if (!isset($_SESSION['name'])) {
                         <h3>Task </h3> <input type="text" name="name" value="' . $el['name'] . '">
                       </label>
                       <label for="">
-                        <h3>Start Date </h3> <input type="datetime-local" name="start" value="' . $el['start'] . '">
+                        <h3>Date Start </h3> <input type="datetime-local" name="start" value="' . $el['start'] . '">
                       </label>
                       <label for="">
-                        <h3>End Date </h3> <input type="datetime-local" name="end" value="' . $el['end'] . '">
+                        <h3>Date End </h3> <input type="datetime-local" name="end" value="' . $el['end'] . '">
                       </label>
                       <label for="">
-                        <h3>status </h3> <select name="rool" id="">
+                        <h3>Status </h3> <select name="rool" id="">
                           <option value="done">' . htmlspecialchars($el['role']) . '</option>
                           <option value="done">Done</option>
                           <option value="in doing">In Progress</option>
                           <option value="suspanded">Suspended</option>
-                          </select>
+                          </select>  
                       </label>
                     </div>
                       <div class="btns">
-                        <button type="submit" name="drop">drop</button>
-                        <button type="submit" name="update">update</button>
+                        <button type="submit" name="drop">Drop</button>
+                        <button type="submit" name="update">Update</button>
                       </div>
                       
                     </form>
@@ -151,7 +150,7 @@ if (!isset($_SESSION['name'])) {
               ';
             }
           } else {
-            echo "<h1>You don’t have any tasks.</h1>";
+            echo "<h1>You don't have any tasks</h1>";
           }
           ?>
 
